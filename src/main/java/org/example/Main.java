@@ -11,6 +11,7 @@ public class Main {
     {
         displayAMessage();
         displayDefaultValues();
+        checkStringEquals();
     }
     //Method to display Welcome message
     public static void displayAMessage()
@@ -27,5 +28,15 @@ public class Main {
         System.out.println("char="+charObj);
         System.out.println("double="+doubleObj);
         System.out.println("boolean="+booleanObj);
+    }
+    //Method to check strings are equal or not
+    public static void checkStringEquals()
+    {
+        String stringOne="Bridgelabz";
+        String stringTwo="Bridgelabz";
+        if(stringOne.equals(stringTwo))
+            System.out.println("Both strings are equals");
+        else
+            System.out.println("Both strings are not equals");
     }
 }
