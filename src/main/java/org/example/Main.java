@@ -12,7 +12,8 @@ public class Main {
         displayAMessage();
         displayDefaultValues();
         checkStringEquals();
-        findSumAndInvalidIntCount(args);
+        //findSumAndInvalidIntCount(args);
+        getName(args);
     }
     //Method to display Welcome message
     public static void displayAMessage()
@@ -41,7 +42,7 @@ public class Main {
             System.out.println("Both strings are not equals");
     }
     //method to find sum of command line integers and count invalid integers
-    public static void findSumAndInvalidIntCount(String args[])
+    public static void findSumAndInvalidIntCount(String[] args)
     {
        int sum=0;
        int invalidIntCount=0;
@@ -56,5 +57,11 @@ public class Main {
         }
         System.out.println("Sum of input number="+sum);
         System.out.println("Number of invalid inputs="+invalidIntCount);
+    }
+    //method to get name via CLA
+    public static void getName(String[] args)
+    {
+        String name=args[0];
+        System.out.println("Name accepted from command line is "+name);
     }
 }
