@@ -12,6 +12,7 @@ public class Main {
         displayAMessage();
         displayDefaultValues();
         checkStringEquals();
+        findSumAndInvalidIntCount(args);
     }
     //Method to display Welcome message
     public static void displayAMessage()
@@ -38,5 +39,22 @@ public class Main {
             System.out.println("Both strings are equals");
         else
             System.out.println("Both strings are not equals");
+    }
+    //method to find sum of command line integers and count invalid integers
+    public static void findSumAndInvalidIntCount(String args[])
+    {
+       int sum=0;
+       int invalidIntCount=0;
+        for (int i=0;i< args.length;i++)
+        {
+            try {
+                sum=sum+Integer.parseInt(args[i]);
+            }catch(NumberFormatException e)
+            {
+                invalidIntCount++;
+            }
+        }
+        System.out.println("Sum of input number="+sum);
+        System.out.println("Number of invalid inputs="+invalidIntCount);
     }
 }
