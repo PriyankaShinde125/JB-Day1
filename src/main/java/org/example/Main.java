@@ -1,5 +1,7 @@
 package org.example;
 
+import java.util.Scanner;
+
 public class Main {
     static String stringObj;
     static int  intObj;
@@ -14,6 +16,7 @@ public class Main {
         checkStringEquals();
         //findSumAndInvalidIntCount(args);
         getName(args);
+        checkLeapYear();
     }
     //Method to display Welcome message
     public static void displayAMessage()
@@ -41,7 +44,7 @@ public class Main {
         else
             System.out.println("Both strings are not equals");
     }
-    //method to find sum of command line integers and count invalid integers
+    //Method to find sum of command line integers and count invalid integers
     public static void findSumAndInvalidIntCount(String[] args)
     {
        int sum=0;
@@ -58,10 +61,43 @@ public class Main {
         System.out.println("Sum of input number="+sum);
         System.out.println("Number of invalid inputs="+invalidIntCount);
     }
-    //method to get name via CLA
+    //Method to get name via CLA
     public static void getName(String[] args)
     {
         String name=args[0];
         System.out.println("Name accepted from command line is "+name);
+    }
+    //Method to check leap year
+    public static void checkLeapYear()
+    {
+        int year;
+        boolean isLeap=false;
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter year");
+        year=sc.nextInt();
+        if(year>1582)
+        {
+            if (year % 4 == 0)
+            {
+                if (year % 100 == 0)
+                {
+                    if (year % 400 == 0)
+                        isLeap = true;
+                    else
+                        isLeap = false;
+                }
+                else
+                    isLeap = true;
+            }
+            else
+                isLeap = false;
+        }
+        else
+            System.out.println(" Invalid Year ");
+
+        if (isLeap)
+            System.out.println(year+" is leap year");
+        else
+            System.out.println(year+" is not leap year");
     }
 }
