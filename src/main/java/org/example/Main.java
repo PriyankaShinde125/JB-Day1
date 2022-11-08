@@ -12,12 +12,12 @@ public class Main {
 
     public static void main(String[] args) {
         Main mainObj = new Main();
-        displayAMessage();
-        /*mainObj.displayDefaultValues();
-        checkStringEquals();
+        mainObj.displayAMessage();
+        mainObj.displayDefaultValues();
+        mainObj.checkStringEquals();
         //findSumAndInvalidIntCount(args);
-        getName(args);
-        checkLeapYear();*/
+        mainObj.getName(args);
+        mainObj.checkLeapYear();
         int[] myArr = new int[]{1, 2, 3, 10, 5, 6, 7};
         mainObj.findEven(myArr);
     }
@@ -30,7 +30,7 @@ public class Main {
     }
 
     //Method to display Welcome message
-    public static void displayAMessage() {
+    public void displayAMessage() {
         System.out.println("Welcome to Bridgelabz LFP program");
     }
 
@@ -46,7 +46,7 @@ public class Main {
     }
 
     //Method to check strings are equal or not
-    public static void checkStringEquals() {
+    public void checkStringEquals() {
         String stringOne = "Bridgelabz";
         String stringTwo = "Bridgelabz";
         if (stringOne.equals(stringTwo))
@@ -56,7 +56,7 @@ public class Main {
     }
 
     //Method to find sum of command line integers and count invalid integers
-    public static void findSumAndInvalidIntCount(String[] args) {
+    public void findSumAndInvalidIntCount(String[] args) {
         int sum = 0;
         int invalidIntCount = 0;
         for (int i = 0; i < args.length; i++) {
@@ -71,13 +71,13 @@ public class Main {
     }
 
     //Method to get name via CLA
-    public static void getName(String[] args) {
+    public void getName(String[] args) {
         String name = args[0];
         System.out.println("Name accepted from command line is " + name);
     }
 
     //Method to check leap year
-    public static void checkLeapYear() {
+    public void checkLeapYear() {
         int year;
         boolean isLeap = false;
         Scanner sc = new Scanner(System.in);
